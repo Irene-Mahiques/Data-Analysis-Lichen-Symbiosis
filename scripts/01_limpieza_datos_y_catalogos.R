@@ -8,6 +8,8 @@ library(dplyr)
 library(stringr)
 library(openxlsx)
 
+if (!dir.exists("output")) dir.create("output")
+
 # 2. LEER BASE DE DATOS
 # Cambia "Catálogo.xlsx" por el nombre de tu archivo original
 datos <- read_excel("data/Catálogo.xlsx")
