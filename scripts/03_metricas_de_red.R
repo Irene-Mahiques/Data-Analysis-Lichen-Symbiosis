@@ -1,19 +1,20 @@
-# 1. LIBRERÍAS
+# ==========================================================
+# SCRIPT 3: ANÁLISIS BIOESTADÍSTICO DE REDES
+# ==========================================================
 library(bipartite)
 
-# 2. CÁLCULO DE ÍNDICES (Ejemplo Comunidad Valenciana)
-# M es tu matriz de interacciones hongo-alga
-M <- table(datos$Micobionte, datos$Fotobionte)
-M_limpia <- M[rownames(M) != "", colnames(M) != ""]
+# Preparar Matriz
+datos <- read.csv2("data/Comunidad_Valenciana.csv")
+matriz <- table(datos$Micobionte, datos$Fotobionte)
+matriz_pura <- as.matrix(as.data.frame.matrix(matriz))
 
-# Selectividad H2'
-h2 <- networklevel(M_limpia, index="H2")
-print(paste("Selectividad H2':", h2))
+# 1. Selectividad (H2')
+h2_val <- networklevel(matriz_pura, index="H2")
 
-# Modularidad Q
-modulos <- computeModules(as.matrix(M_limpia))
-print(paste("Modularidad Q:", modulos@likelihood))
+# 2. Modularidad y Roles (c y z)
+modulos <- computeModules(matriz_pura)
+roles <- czvalues(modulos, level = "lower") # lower = hongos
 
-# Especies clave (c y z)
-roles <- czvalues(modulos)
-write.csv(roles, "output/Especies_Clave_CZ.csv")
+# Imprimir Resultados
+print(paste("Índice H2':", h2_val))
+print(roles)
