@@ -1,16 +1,8 @@
-# ==========================================================
-# SCRIPT 2: VISUALIZACIÓN DE DIVERSIDAD TAXONÓMICA
-# ==========================================================
-
-# 1. LIBRERÍAS
-library(readxl)
 library(ggplot2)
 library(dplyr)
 library(svglite)
 
-datos_tax <- read_excel("data/Familia+Orden+Clase.xlsx")
-
-# 2. FUNCIONES DE GRÁFICOS (FAMILIAS Y ÓRDENES)
+# Función para estandarizar gráficos de abundancia (Nº de registros)
 crear_barra_taxonomia <- function(df, columna, titulo, archivo, color_hex) {
   df_plot <- df %>%
     filter(!is.na(!!sym(columna))) %>%
@@ -26,6 +18,3 @@ crear_barra_taxonomia <- function(df, columna, titulo, archivo, color_hex) {
 
   ggsave(paste0("output/", archivo), p, device = "svg", width = 9, height = 7)
 }
-
-# Ejecución ejemplo: Familias en Verde Oliva
-crear_barra_taxonomia(datos_tax, "Familia", "Principales Familias", "Bar_Familia_CV.svg", "#3B5C11")
