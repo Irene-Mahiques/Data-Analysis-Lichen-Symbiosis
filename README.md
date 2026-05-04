@@ -1,39 +1,59 @@
-# 📊 Diversidad Taxonómica y Redes de Interacción de Simbiontes Liquénicos
+# 🍄 Lichen-Symbiont Interaction Networks
 
-**Bióloga:** Irene Mahiques Andrés
-**Contacto:** www.linkedin.com/in/irene-mahiques
+[![R-v4.2.0](https://img.shields.io/badge/R-v4.2.0-blue.svg)](https://www.r-project.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🎯 Objetivo del Proyecto
-Este repositorio documenta el pipeline integral —desde el procesamiento de secuencias hasta el modelado bioestadístico— de mi Trabajo de Fin de Grado (TFG), centrado en las redes de interacción de ecosistemas montañosos de la Comunidad Valenciana. 
+**Investigadora:** Irene Mahiques Andrés  
+**Especialidad:** Biología de Sistemas | Ecología Molecular  
+**Contacto:** [LinkedIn](https://www.linkedin.com/in/irene-mahiques)
 
-**💡 Aplicación Biotecnológica:** Las metodologías, el tratamiento de datos y el modelado matemático de redes de co-ocurrencia desarrollados en este proyecto son directamente extrapolables a la investigación industrial. Específicamente, para el análisis de perfiles complejos como el microbioma cutáneo/intestinal, la validación toxicológica predictiva y la biología de sistemas aplicada a métodos alternativos (NAMs).
+## 🎯 Resumen del Proyecto
+Este repositorio documenta el pipeline bioinformático y estadístico desarrollado para mi **Trabajo de Fin de Grado (TFG)**. El proyecto modela las interacciones biológicas entre micobiontes y fotobiontes en ecosistemas de montaña de la Comunidad Valenciana.
 
----
-
-## 🛠️ Stack Tecnológico y Herramientas
-* **Lenguajes y Entornos:** R, RStudio.
-* **Bioinformática y Filogenia:** Geneious Prime (edición y ensamblaje), MAFFT (alineamiento), RAxML (árboles de máxima verosimilitud).
-* **Análisis de Redes y Ecología:** Paquete bipartite (R) y modelado de rasgos funcionales.
-* **Tratamiento de Datos:** Data Cleaning, normalización de secuencias (DNA Barcoding de la región ITS) y estadística multivariante.
-
----
-
-## 📈 Visualización de Resultados y Redes Complejas
-
-*(Nota: En esta sección se irán actualizando los gráficos generados mediante código que modelan las interacciones biológicas).*
-
-### 1. Modelado de Redes de Interacción
-Demostración de la capacidad para analizar ecosistemas multivariables y detectar "nodos clave" o biomarcadores taxonómicos mediante el paquete bipartite.
-
-
-### 2. Análisis de Diversidad y Filogenia
-Aplicación de rigor estadístico para validar la significancia de las comunidades simbióticas (micobiontes y fotobiontes) y sus relaciones evolutivas.
+**💡 Valor Tecnológico e Industrial:**  
+Las metodologías de **modelado matemático de redes** y el tratamiento de datos biológicos complejos aquí presentados son directamente extrapolables a:
+*   **Análisis de Microbiomas:** Caracterización de perfiles complejos.
+*   **NAMs (Métodos Alternativos):** Biología de sistemas aplicada a validación toxicológica.
+*   **Biomarcadores:** Detección de "nodos clave" en ecosistemas.
 
 ---
 
-## ⚙️ Metodología Aplicada
-1. **Obtención y Procesamiento de Datos Raw:** Extracción de ADN (protocolo Chelex®), amplificación por PCR (ITS) y purificación enzimática (ExoCleanUp).
-2. **Bioinformática Filogenética:** Ensamblaje de secuencias, alineamiento y construcción de modelos de máxima verosimilitud.
-3. **Limpieza y Preprocesamiento:** Estructuración de las matrices de datos biológicos complejos para su volcado en R.
-4. **Cálculo de Índices Ecológicos:** Ejecución de test estadísticos para el análisis de diversidad.
-5. **Construcción de Grafos:** Inferencia matemática de interacciones biológicas complejas (simbiosis/competencia) a partir de los datos de secuenciación.
+## 📂 Estructura del Repositorio
+*   [`/scripts`](./scripts): 
+    *   `01_data_cleaning.R`: Normalización taxonómica y curación de registros.
+    *   `02_taxonomy_viz.R`: Generación de perfiles de diversidad (Clase/Orden/Familia).
+    *   `03_network_analysis.R`: Cálculo de índices de red ($H_2'$, $Q$, NODF).
+    *   `04_heatmaps_and_graphs.R`: Visualización de interacciones complejas.
+*   [`/data`](./data): Estructura de matrices de interacción (muestras).
+*   [`/output`](./output): Resultados visuales (SVG/PDF) listos para publicación.
+
+---
+
+## 🧬 Pipeline Bioinformático
+
+### 1. Curación y Normalización
+Implementación de scripts para la corrección masiva de registros y unificación taxonómica. El análisis se basa en el **Nº de registros (abundancia)** para garantizar rigor en grupos complejos como líquenes leprosos y crustáceos.
+
+### 2. Modelado de Redes Bipartitas (`bipartite`)
+Análisis topológico avanzado para determinar la estabilidad del ecosistema:
+*   **Selectividad ($H_2'$):** Especialización absoluta de las simbiosis.
+*   **Modularidad ($Q$):** Detección de compartimentación mediante algoritmos de verosimilitud.
+*   **Roles de Especie:** Identificación de conectores y hubs mediante valores $c$ y $z$.
+
+---
+
+## 📈 Visualización y Resultados Clave
+
+### A. Estructura de la Comunidad (Taxonomía)
+<img width="875" alt="Familia_CV" src="https://github.com/user-attachments/assets/ee774441-96db-41a3-b0bf-107809cc40c9" />
+
+### B. Evolución de la Selectividad ($H_2'$)
+Análisis comparativo de la especialización hongo-alga a través de diferentes niveles de organización y zonas geográficas.
+<img width="1000" alt="Grafica_Selectividad_Definitiva" src="https://github.com/user-attachments/assets/94c86a6e-ba3e-486b-9e9e-8e55e6a7a759" />
+
+---
+
+## ⚙️ Metodología
+1. **Lab:** Extracción ADN (Chelex®), PCR (ITS) y purificación enzimática.
+2. **Bioinfo:** Ensamblaje (Geneious), alineamiento (MAFFT) y filogenia (RAxML).
+3. **Estadística:** Modelado matemático de redes bipartitas en R.
