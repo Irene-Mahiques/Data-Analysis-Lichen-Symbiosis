@@ -17,6 +17,17 @@ El proyecto integra protocolos de **laboratorio molecular** (extracción y ampli
 
 ---
 
+## 🚀 Escalabilidad y Aplicaciones Transversales (Use Cases)
+
+Aunque este pipeline fue validado con datos empíricos de simbiosis liquénicas, la arquitectura de modelado topológico y los scripts bioestadísticos son directamente extrapolables a otros campos de la **Biología de Sistemas** y la **Ciencia de Datos**:
+
+*   **Microbioma y Metagenómica:** Identificación de taxones clave (*keystone species*) en microbiotas intestinales o de suelos agronómicos mediante el análisis de roles topológicos ($z$ y $c$).
+*   **NAMs (New Approach Methodologies):** Modelado de interacciones bipartitas en redes de toxicología predictiva (ej. interacciones Compuesto-Proteína) para alternativas a la experimentación animal.
+*   **Epidemiología y Salud Pública:** Análisis de anidamiento y compartimentación en redes de transmisión huésped-patógeno.
+*   **Agroecología:** Cuantificación de la estabilidad y el solapamiento de nicho en redes mutualistas planta-polinizador.
+  
+---
+
 ## 🧬 Pipeline del Proyecto
 
 ### 1. Fase Experimental (Laboratorio Molecular)
