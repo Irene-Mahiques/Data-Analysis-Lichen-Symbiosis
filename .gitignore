@@ -1,0 +1,15 @@
+# --- R specific ---
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# --- Confidential Data ---
+# Bloqueamos toda la carpeta de datos
+data/
+# Excepto el archivo de ejemplo para que la gente pueda probar el código
+!data/sample_data.csv
+
+# --- Output ---
+# Si no quieres que vean tus gráficas finales todavía, descomenta la siguiente línea:
+# output/
