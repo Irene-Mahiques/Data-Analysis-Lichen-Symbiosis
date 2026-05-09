@@ -1,4 +1,5 @@
-# 🍄 Lichen-Symbiont Interaction Networks: Molecular & Ecological Pipeline
+# 🍄 Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana
+### Una aproximación funcional y multiescala
 
 [![R-v4.3.2](https://img.shields.io/badge/R-v4.3.2-blue.svg)](https://www.r-project.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -43,6 +44,17 @@ Procesamiento estadístico de las matrices taxonómicas resultantes ($N=576$):
 
 ---
 
+## 🔒 Data Privacy & Confidentiality
+
+> [!WARNING]
+> **Aviso de Privacidad y Confidencialidad**
+> 
+> Los conjuntos de datos crudos utilizados en esta investigación contienen información sensible y están sujetos a acuerdos de confidencialidad con la institución y los responsables del muestreo. 
+> 
+> Por este motivo, el directorio `data/` ha sido excluido de este repositorio público mediante `.gitignore`. Para asegurar la reproducibilidad del código y permitir la revisión del pipeline, se proporciona un archivo `data/sample_data.csv` con registros anonimizados/dummy que permiten ejecutar los scripts y validar la lógica del análisis.
+
+---
+
 ## 📈 Visualización de Resultados
 
 ### Estructura de la Comunidad
@@ -52,7 +64,6 @@ Procesamiento estadístico de las matrices taxonómicas resultantes ($N=576$):
 
 
 ### Red de Interacción (Biotipo)
-
 
 ---
 
