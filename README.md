@@ -72,13 +72,13 @@ Procesamiento estadístico de las matrices taxonómicas resultantes ($N=576$):
 Si utilizas estos protocolos o scripts en tu investigación, por favor cítalos de la siguiente manera:
 
 ### Formato APA
-> Mahiques-Andrés, I. (2026). *Lichen-Symbiont Interaction Networks: A molecular and statistical pipeline for ecological networks*. GitHub Repository. [Añadir-URL-de-repo]
+> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana: Una aproximación funcional y multiescala*. GitHub Repository. [Añadir-URL-de-repo]
 
 ### Formato BibTeX
 ```bibtex
 @software{mahiques_lichen_2026,
   author = {Mahiques Andrés, Irene},
-  title = {Lichen-Symbiont Interaction Networks: A molecular and statistical pipeline for ecological networks},
+  title = {Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana: Una aproximación funcional y multiescala},
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub repository},
