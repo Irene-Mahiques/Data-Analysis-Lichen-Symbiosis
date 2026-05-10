@@ -3,11 +3,3 @@
 .RData
 .Ruserdata
 .Rproj.user/
-*.Rproj
-
-# --- Confidential Data ---
-data/*
-!data/sample_data.xlsx
-
-# --- Output ---
-!output/
