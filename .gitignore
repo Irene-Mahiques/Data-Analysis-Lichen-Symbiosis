@@ -3,13 +3,11 @@
 .RData
 .Ruserdata
 .Rproj.user/
+*.Rproj
 
 # --- Confidential Data ---
-# Bloqueamos toda la carpeta de datos
-data/
-# Excepto el archivo de ejemplo para que la gente pueda probar el código
-!data/sample_data.csv
+data/*
+!data/sample_data.xlsx
 
 # --- Output ---
-# Si no quieres que vean tus gráficas finales todavía, descomenta la siguiente línea:
-# output/
+!output/
