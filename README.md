@@ -37,21 +37,34 @@ Protocolos optimizados para la obtención de datos genómicos en organismos liqu
 *   **Purificación:** Protocolos de limpieza enzimática mediante ExoCleanUp FAST® previos a la secuenciación.
 
 ### 2. Fase Analítica (Ecología Computacional en R)
-Procesamiento estadístico de las matrices taxonómicas resultantes ($N=576$):
-*   **Diversidad Alfa y Beta:** Cálculo de riqueza específica (S), índices de Shannon, Simpson y equidad de Pielou. Validación mediante curvas de rarefacción y análisis de agrupamiento jerárquico (Bray-Curtis/Ward) mediante `vegan`.
-*   **Modelado Estadístico y Partición de Varianza:** Modelos Lineales Generalizados (GLM) multinomiales (`nnet`) y análisis de partición de la varianza (`varpart`) para cuantificar el peso de los determinantes ecológicos (biotipo, sustrato, geografía).
-*   **Análisis de Redes Bipartitas:** Inferencia de topología (paquete `bipartite`), métricas de anidamiento (NODF), modularidad ($Q$) y especialización global ($H'_2$).
-*   **Roles Topológicos:** Clasificación de especies en *hubs* y conectores mediante análisis de conectividad intra-módulo ($z$) e inter-módulo ($c$).
+El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/scripts`):
+
+#### I. Preprocesamiento y Biodiversidad
+* `01_data_cleaning.R`: Limpieza, estandarización taxonómica y manejo de *missing values*.
+* `02_alpha_diversity.R`: Cálculo de índices de Shannon, Simpson y Equidad de Pielou.
+* `03_rarefaction_curves.R`: Validación del esfuerzo de muestreo mediante curvas de acumulación.
+* `04_beta_diversity.R`: Análisis de similitud florística (Bray-Curtis & Ward.D2).
+
+#### II. Ecología Funcional y Modelado
+* `05_structural_characterization.R`: Visualización multipanel de biotipos, sustratos y reproducción.
+* `06_glm_analysis.R`: Validación estadística de diferencias mediante GLM multinomiales.
+* `09_variance_partitioning.R`: Partición de varianza para determinar el peso de la geografía, biología y filogenia.
+
+#### III. Análisis de Redes y Nichos
+* `07_network_and_niche_analysis.R`: Inferencia de anidamiento (NODF) y solapamiento de nicho (*niche overlap*).
+* `08_topological_roles_olesen.R`: Clasificación de especies en *Hubs* y *Conectores* (Análisis z-c).
+* `12_bipartite_network_plots.R`: Generación de diagramas visuales de red en formato vectorial (SVG).
+
+#### IV. Consolidación de Resultados
+* `10_network_descriptives.R`: Extracción de KPIs (N total de muestras, nodos y enlaces).
+* `11_floristic_catalogue.R`: Generación del inventario taxonómico y funcional automatizado.
 
 ---
 
 ## 📂 Estructura del Repositorio
-*   [`/scripts`](./scripts): 
-    *   `01_data_cleaning.R`: Limpieza de datos, manejo de *missing values* y estandarización de matrices.
-    *   `02_diversity_metrics.R`: Scripts para el cálculo de biodiversidad y rarefacción.
-    *   `03_network_topology.R`: Inferencia de métricas de red y ejecución de modelos nulos.
-    *   `04_visualization.R`: Generación de figuras de alta calidad (ggplot2, bipartite plots).
-*   [`/output`](./output): Resultados visuales (SVG) y tablas de métricas topológicas.
+* `/scripts`: Código fuente en R debidamente documentado.
+* `/output`: Resultados visuales (SVG) y tablas de métricas (.xlsx).
+* `/data`: (Excluido por confidencialidad).
 
 ---
 
@@ -80,18 +93,15 @@ Procesamiento estadístico de las matrices taxonómicas resultantes ($N=576$):
 
 ## 📑 Cómo citar (Citation)
 
-Si utilizas estos protocolos o scripts en tu investigación, por favor cítalos de la siguiente manera:
-
 ### Formato APA
-> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana: Una aproximación funcional y multiescala*. GitHub Repository. [Añadir-URL-de-repo]
+> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana*. GitHub Repository.
 
 ### Formato BibTeX
 ```bibtex
 @software{mahiques_lichen_2026,
   author = {Mahiques Andrés, Irene},
-  title = {Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana: Una aproximación funcional y multiescala},
+  title = {Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana},
   year = {2026},
   publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{[https://github.com/usuario/repo](https://github.com/usuario/repo)}}
+  journal = {GitHub repository}
 }
