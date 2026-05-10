@@ -21,10 +21,10 @@ El proyecto integra protocolos de **laboratorio molecular** (extracción y ampli
 
 Aunque este pipeline fue validado con datos empíricos de simbiosis liquénicas, la arquitectura de modelado topológico y los scripts bioestadísticos son directamente extrapolables a otros campos de la **Biología de Sistemas** y la **Ciencia de Datos**:
 
-*   **Microbioma y Metagenómica:** Identificación de taxones clave (*keystone species*) en microbiotas intestinales o de suelos agronómicos mediante el análisis de roles topológicos ($z$ y $c$).
-*   **NAMs (New Approach Methodologies):** Modelado de interacciones bipartitas en redes de toxicología predictiva (ej. interacciones Compuesto-Proteína) para alternativas a la experimentación animal.
-*   **Epidemiología y Salud Pública:** Análisis de anidamiento y compartimentación en redes de transmisión huésped-patógeno.
-*   **Agroecología:** Cuantificación de la estabilidad y el solapamiento de nicho en redes mutualistas planta-polinizador.
+* **Microbioma y Metagenómica:** Identificación de taxones clave (*keystone species*) en microbiotas intestinales o de suelos agronómicos mediante el análisis de roles topológicos ($z$ y $c$).
+* **NAMs (New Approach Methodologies):** Modelado de interacciones bipartitas en redes de toxicología predictiva (ej. interacciones Compuesto-Proteína) para alternativas a la experimentación animal.
+* **Epidemiología y Salud Pública:** Análisis de anidamiento y compartimentación en redes de transmisión huésped-patógeno.
+* **Agroecología:** Cuantificación de la estabilidad y el solapamiento de nicho en redes mutualistas planta-polinizador.
   
 ---
 
@@ -32,9 +32,9 @@ Aunque este pipeline fue validado con datos empíricos de simbiosis liquénicas,
 
 ### 1. Fase Experimental (Laboratorio Molecular)
 Protocolos optimizados para la obtención de datos genómicos en organismos liquenizados:
-*   **Extracción de ADN:** Métodos de extracción rápida mediante resina Chelex® 100.
-*   **Amplificación Multilocus (PCR):** Optimización de reacciones para marcadores nucleares (ITS, LSU), mitocondriales (mtSSU) y plastidiales (rbcL) utilizando la polimerasa MyTaq™.
-*   **Purificación:** Protocolos de limpieza enzimática mediante ExoCleanUp FAST® previos a la secuenciación.
+* **Extracción de ADN:** Protocolos rápidos mediante resina Chelex® 100.
+* **PCR Multilocus:** Marcadores nucleares (ITS, LSU), mitocondriales (mtSSU) y plastidiales (rbcL).
+* **Purificación:** Limpieza enzimática mediante ExoCleanUp FAST®.
 
 ### 2. Fase Analítica (Ecología Computacional en R)
 El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/scripts`):
@@ -63,31 +63,32 @@ El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/script
 
 ## 📂 Estructura del Repositorio
 * `/scripts`: Código fuente en R debidamente documentado.
-* `/output`: Resultados visuales (SVG) y tablas de métricas (.xlsx).
-* `/data`: (Excluido por confidencialidad).
+* `/output`: Resultados visuales (SVG) y tablas de métricas generadas con **Mock Data**.
+* `/data`: Archivos `.xlsx` con datos sintéticos para asegurar la reproducibilidad.
 
 ---
 
-## 🔒 Data Privacy & Confidentiality
+## 🔒 Reproducibilidad y Confidencialidad
 
-> [!WARNING]
-> **Aviso de Privacidad y Confidencialidad**
+> [!IMPORTANT]
+> **Aviso sobre los Datos**
 > 
-> Los conjuntos de datos crudos utilizados en esta investigación contienen información sensible y están sujetos a acuerdos de confidencialidad con la institución y los responsables del muestreo. 
+> Por motivos de confidencialidad institucional, los conjuntos de datos originales no son públicos. Sin embargo, este repositorio incluye archivos en la carpeta `data/` con **datos inventados (Mock Data)** que mantienen la estructura exacta de los reales. 
 > 
-> Por este motivo, el directorio `data/` ha sido excluido de este repositorio público mediante `.gitignore`. Para asegurar la reproducibilidad del código y permitir la revisión del pipeline, se proporciona un archivo `data/sample_data.csv` con registros anonimizados/dummy que permiten ejecutar los scripts y validar la lógica del análisis.
+> Esto permite que cualquier usuario pueda ejecutar el pipeline completo y obtener las gráficas y tablas presentes en la carpeta `output/`, validando así la funcionalidad del código.
 
 ---
 
-## 📈 Visualización de Resultados
+## 📈 Visualización de Resultados (Demo con Mock Data)
 
-### Estructura de la Comunidad
+### Caracterización Estructural
+![Estructura](./output/05_Caracterizacion_Estructural_Final.svg)
 
+### Análisis de Roles Topológicos (Olesen)
+![Olesen](./output/08_Grafica_Roles_Olesen_Final.svg)
 
-### Análisis de Especialización
-
-
-### Red de Interacción (Biotipo)
+### Red de Interacción (Bipartita)
+![Red](./output/plots_networks/red_biotipo_Zona_Completa.svg)
 
 ---
 
