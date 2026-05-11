@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1152.00pt' height='720.00pt' viewBox='0 0 1152.00 720.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMTUyLjAwfDAuMDB8NzIwLjAw'>
+    <rect x='0.00' y='0.00' width='1152.00' height='720.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8NzIwLjAw)'>
+</g>
+<defs>
+  <clipPath id='cpMzYuMDB8MTExNi4wMHwzNi4wMHw2ODQuMDA='>
+    <rect x='36.00' y='36.00' width='1080.00' height='648.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMzYuMDB8MTExNi4wMHwzNi4wMHw2ODQuMDA=)'>
+<rect x='76.00' y='124.29' width='138.89' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(149.09,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 3</text>
+<rect x='256.56' y='124.29' width='347.22' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(433.81,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 7</text>
+<rect x='645.44' y='124.29' width='277.78' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(787.98,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 4</text>
+<rect x='964.89' y='124.29' width='69.44' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(1003.26,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 6</text>
+<rect x='76.00' y='552.86' width='138.89' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(149.09,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='88.02px' lengthAdjust='spacingAndGlyphs'>Fruticuloso</text>
+<rect x='256.56' y='552.86' width='208.33' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(364.37,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='68.02px' lengthAdjust='spacingAndGlyphs'>Foliaceo</text>
+<rect x='506.56' y='552.86' width='138.89' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(579.65,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='82.03px' lengthAdjust='spacingAndGlyphs'>Crustaceo</text>
+<rect x='687.11' y='552.86' width='347.22' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(864.37,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='108.04px' lengthAdjust='spacingAndGlyphs'>Escuamuloso</text>
+<polygon points='464.89,167.14 603.78,167.14 826.00,552.86 687.11,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='784.33,167.14 923.22,167.14 964.89,552.86 826.00,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='76.00,167.14 145.44,167.14 145.44,552.86 76.00,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='145.44,167.14 214.89,167.14 326.00,552.86 256.56,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='256.56,167.14 326.00,167.14 214.89,552.86 145.44,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='326.00,167.14 395.44,167.14 395.44,552.86 326.00,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='395.44,167.14 464.89,167.14 576.00,552.86 506.56,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='645.44,167.14 714.89,167.14 464.89,552.86 395.44,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='714.89,167.14 784.33,167.14 645.44,552.86 576.00,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='964.89,167.14 1034.33,167.14 1034.33,552.86 964.89,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+</g>
+</svg>

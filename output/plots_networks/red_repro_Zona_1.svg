@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1152.00pt' height='720.00pt' viewBox='0 0 1152.00 720.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMTUyLjAwfDAuMDB8NzIwLjAw'>
+    <rect x='0.00' y='0.00' width='1152.00' height='720.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8NzIwLjAw)'>
+</g>
+<defs>
+  <clipPath id='cpMzYuMDB8MTExNi4wMHwzNi4wMHw2ODQuMDA='>
+    <rect x='36.00' y='36.00' width='1080.00' height='648.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMzYuMDB8MTExNi4wMHwzNi4wMHw2ODQuMDA=)'>
+<rect x='76.00' y='124.29' width='67.23' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(113.26,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 5</text>
+<rect x='154.99' y='124.29' width='134.45' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(225.86,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 3</text>
+<rect x='301.21' y='124.29' width='336.13' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(472.92,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 4</text>
+<rect x='649.11' y='124.29' width='67.23' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(686.37,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 2</text>
+<rect x='728.10' y='124.29' width='336.13' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(899.81,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 1</text>
+<rect x='76.00' y='552.86' width='470.59' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(314.94,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='55.02px' lengthAdjust='spacingAndGlyphs'>Sexual</text>
+<rect x='593.65' y='552.86' width='470.59' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(832.59,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='64.02px' lengthAdjust='spacingAndGlyphs'>Asexual</text>
+<polygon points='728.10,167.14 1064.24,167.14 1064.24,552.86 728.10,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='301.21,167.14 570.12,167.14 546.59,552.86 277.68,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='154.99,167.14 289.45,167.14 277.68,552.86 143.23,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='76.00,167.14 143.23,167.14 143.23,552.86 76.00,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='570.12,167.14 637.34,167.14 660.87,552.86 593.65,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='649.11,167.14 716.34,167.14 728.10,552.86 660.87,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+</g>
+</svg>
