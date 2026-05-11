@@ -88,7 +88,7 @@ El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/script
 ![Olesen](./output/08_Grafica_Roles_Olesen_Final.svg)
 
 ### Red de Interacción (Bipartita)
-![Red](./output/plots_networks/red_biotipo_Zona_Completa.svg)
+![Red](./output/plots_networks/red_biotipo_Zona_1.svg)
 
 ---
 
