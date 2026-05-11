@@ -12,7 +12,7 @@ pacman::p_load(dplyr, stringr, tidyr, readxl, writexl)
 
 # 2. CARGA DE DATOS (MOCK DATA) -----------------------------------------------
 # Archivo con datos inventados para demostración del pipeline
-raw_data <- read_excel("data/raw/DATOS_R_SUCIOS.xlsx")
+raw_data <- read_excel("data/raw/DATOS_R.xlsx")
 
 # 3. DEPURACIÓN INICIAL --------------------------------------------------------
 clean_data <- raw_data %>%
