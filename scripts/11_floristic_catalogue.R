@@ -15,7 +15,7 @@ if (!dir.exists("output")) dir.create("output")
 
 # 2. CARGA DE DATOS ------------------------------------------------------------
 # Se utiliza el archivo específico para el catálogo (mantiene nomenclatura original)
-df <- read_excel("data/raw/DATOS_CATALOGO.xlsx") %>%
+df <- read_excel("data/raw/DATOS_CATÁLOGO.xlsx") %>%
   rename(Reproduccion = matches("Reproducción")) %>%
   filter(!is.na(Micobionte))
 
