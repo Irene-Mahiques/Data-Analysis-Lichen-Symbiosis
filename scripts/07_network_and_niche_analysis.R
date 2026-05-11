@@ -25,31 +25,44 @@ todas_las_zonas <- c("Zona completa", zonas_base)
 # 3. FUNCIÓN DE ANÁLISIS DE RED ----------------------------------------
 # Esta función ejecuta el pipeline de topología e inferencia mediante modelos nulos
 calcular_red_completa <- function(tabla_cruda, nombre_zona, tipo_red) {
-  # Limpieza de matriz (eliminar filas/columnas vacías)
-  matriz <- empty(as.matrix(as.data.frame.matrix(tabla_cruda)))
   
-  # Métricas empíricas globales
-  met_emp <- networklevel(matriz, index = c("connectance", "NODF", "niche overlap"))
+  # Limpieza de matriz: eliminamos vacíos SIN perder las dimensiones
+  matriz <- as.matrix(as.data.frame.matrix(tabla_cruda))
+  matriz <- matriz[rowSums(matriz) > 0, colSums(matriz) > 0, drop = FALSE]
   
-  # Cálculo de Modularidad Q (Algoritmo de Clauset et al.)
-  mod_emp <- computeModules(matriz)@likelihood
-  
-  # Extracción segura de métricas
-  v_conn <- met_emp[grepl("connectance", names(met_emp), ignore.case = TRUE)][1]
-  v_nodf <- met_emp[grepl("NODF", names(met_emp), ignore.case = TRUE)][1]
-  v_HL   <- met_emp[grepl("overlap.*(HL|higher)", names(met_emp), ignore.case = TRUE)][1]
-  v_LL   <- met_emp[grepl("overlap.*(LL|lower)", names(met_emp), ignore.case = TRUE)][1]
-  
-  # INFERENCIA: Modelos Nulos (100 iteraciones para Z-score)
-  # Vaznull mantiene marginales y conectancia constante
-  nulls <- nullmodel(matriz, N=100, method="vaznull")
-  null_nodf <- sapply(nulls, function(x) {
-    met_nulo <- networklevel(x, index="NODF")
-    as.numeric(met_nulo[grepl("NODF", names(met_nulo), ignore.case = TRUE)][1])
-  })
-  
-  # Cálculo de Significancia (Z-score)
-  z_nodf <- (as.numeric(v_nodf) - mean(null_nodf, na.rm = TRUE)) / sd(null_nodf, na.rm = TRUE)
+  # --- ANTI-COLAPSO (Mock Data Protection) ---
+  if(nrow(matriz) >= 2 && ncol(matriz) >= 2) {
+    
+    # Métricas empíricas globales (silenciamos los warnings molestos de tamaño)
+    suppressWarnings({
+      met_emp <- networklevel(matriz, index = c("connectance", "NODF", "niche overlap"))
+      mod_emp <- computeModules(matriz)@likelihood
+    })
+    
+    # Extracción segura de métricas
+    v_conn <- met_emp[grepl("connectance", names(met_emp), ignore.case = TRUE)][1]
+    v_nodf <- met_emp[grepl("NODF", names(met_emp), ignore.case = TRUE)][1]
+    v_HL   <- met_emp[grepl("overlap.*(HL|higher)", names(met_emp), ignore.case = TRUE)][1]
+    v_LL   <- met_emp[grepl("overlap.*(LL|lower)", names(met_emp), ignore.case = TRUE)][1]
+    
+    # INFERENCIA: Modelos Nulos (100 iteraciones para Z-score)
+    nulls <- nullmodel(matriz, N=100, method="vaznull")
+    null_nodf <- sapply(nulls, function(x) {
+      suppressWarnings({
+        met_nulo <- networklevel(x, index="NODF")
+      })
+      as.numeric(met_nulo[grepl("NODF", names(met_nulo), ignore.case = TRUE)][1])
+    })
+    
+    # Cálculo de Significancia (Z-score)
+    z_nodf <- (as.numeric(v_nodf) - mean(null_nodf, na.rm = TRUE)) / sd(null_nodf, na.rm = TRUE)
+    
+  } else {
+    # Si la matriz es 1x1 o 1xN (típico en datos simulados), devolvemos NAs
+    message(paste("⚠️ Matriz demasiado pequeña para", nombre_zona, "-", tipo_red, "(Saltando cálculos de red pura)"))
+    v_conn <- NA; v_nodf <- NA; z_nodf <- NA; mod_emp <- NA; v_LL <- NA; v_HL <- NA
+  }
+  # --------------------------------------------------
   
   return(data.frame(
     Zona = nombre_zona, Tipo_Red = tipo_red,
