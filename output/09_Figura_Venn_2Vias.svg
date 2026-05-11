@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='576.00pt' height='576.00pt' viewBox='0 0 576.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='576.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw1NzYuMDA=)'>
+<polygon points='59.04,502.56 545.76,502.56 545.76,59.04 59.04,59.04 ' style='stroke-width: 0.75;' />
+</g>
+<defs>
+  <clipPath id='cpNTkuMDR8NTQ1Ljc2fDU5LjA0fDUwMi41Ng=='>
+    <rect x='59.04' y='59.04' width='486.72' height='443.52' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNTkuMDR8NTQ1Ljc2fDU5LjA0fDUwMi41Ng==)'>
+<circle cx='210.43' cy='280.80' r='133.36' style='stroke-width: 0.75; fill: #4E7E1A; fill-opacity: 0.59;' />
+<circle cx='394.37' cy='280.80' r='133.36' style='stroke-width: 0.75; fill: #7B4B2A; fill-opacity: 0.59;' />
+<text x='90.86' y='164.96' text-anchor='middle' style='font-size: 14.40px; font-family: "Arial";' textLength='64.02px' lengthAdjust='spacingAndGlyphs'>Geografía</text>
+<text x='513.94' y='164.90' text-anchor='middle' style='font-size: 14.40px; font-family: "Arial";' textLength='52.01px' lengthAdjust='spacingAndGlyphs'>Biología</text>
+<text x='210.43' y='287.16' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='55.04px' lengthAdjust='spacingAndGlyphs'>0.0728</text>
+<text x='394.37' y='287.15' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='55.04px' lengthAdjust='spacingAndGlyphs'>0.1345</text>
+<text x='302.40' y='287.16' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='55.04px' lengthAdjust='spacingAndGlyphs'>0.0828</text>
+<text x='514.22' y='484.68' text-anchor='end' style='font-size: 18.00px; font-family: "Arial";' textLength='154.58px' lengthAdjust='spacingAndGlyphs'>Residuals = 0.7098</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw1NzYuMDA=)'>
+<text x='302.40' y='36.39' text-anchor='middle' style='font-size: 19.20px; font-weight: bold; font-family: "Arial";' textLength='278.29px' lengthAdjust='spacingAndGlyphs'>Determinantes de la Simbiosis</text>
+<text x='302.40' y='571.68' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='88.39px' lengthAdjust='spacingAndGlyphs'>N = 56 muestras</text>
+</g>
+</svg>
