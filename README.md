@@ -1,4 +1,4 @@
-# 🍄 Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana
+# 🍄 Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte
 ### Una aproximación funcional y multiescala
 
 [![R-v4.3.2](https://img.shields.io/badge/R-v4.3.2-blue.svg)](https://www.r-project.org/)
@@ -95,13 +95,13 @@ El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/script
 ## 📑 Cómo citar (Citation)
 
 ### Formato APA
-> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana*. GitHub Repository.
+> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte*. GitHub Repository.
 
 ### Formato BibTeX
 ```bibtex
 @software{mahiques_lichen_2026,
   author = {Mahiques Andrés, Irene},
-  title = {Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte en la Comunidad Valenciana},
+  title = {Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte},
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub repository}
