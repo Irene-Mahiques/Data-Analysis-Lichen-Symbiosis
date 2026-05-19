@@ -123,27 +123,22 @@ dev.off()
 # ==============================================================================
 message("Ejecutando Modelo 4 (3 Vías - Genética vs Ambiente)...")
 
-# 1. Filtramos desde df_base (excluimos Geografía y Reproducción)
 df_3v <- df_base %>%
   select(Fotobionte_clean, Familia, Biotipo, Sustrato) %>% 
   drop_na()
 
-# 2. Creación de matrices (Los 3 pilares)
 Y_3v  <- as.data.frame(model.matrix(~ Fotobionte_clean - 1, data = df_3v))
 X1_3v <- as.data.frame(model.matrix(~ Familia - 1, data = df_3v))  # FILOGENIA
 X2_3v <- as.data.frame(model.matrix(~ Biotipo - 1, data = df_3v))  # MORFOLOGÍA
 X3_3v <- as.data.frame(model.matrix(~ Sustrato - 1, data = df_3v)) # ECOLOGÍA
 
-# 3. Análisis Varpart
 mod_3v <- varpart(Y_3v, X1_3v, X2_3v, X3_3v)
 
-# 4. Exportar Tabla de Resultados
 df_res_3v <- as.data.frame(mod_3v$part$indfract) %>%
   mutate(Fraccion = rownames(.)) %>%
   select(Fraccion, everything())
 write_xlsx(df_res_3v, "output/09_Tabla_Varianza_3Vias.xlsx")
 
-# 5. Exportar Figura de 3 Círculos (SVG)
 svglite("output/09_Figura_Venn_3Vias.svg", width = 10.5, height = 10.5, bg = "transparent")
 
 plot(mod_3v, 
