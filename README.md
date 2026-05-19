@@ -2,7 +2,7 @@
 ### Una aproximación funcional y multiescala
 
 [![R-v4.3.2](https://img.shields.io/badge/R-v4.3.2-blue.svg)](https://www.r-project.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 **Investigadora:** Irene Mahiques Andrés  
 **Especialidad:** Biología de Sistemas | Ecología Molecular  
@@ -33,7 +33,7 @@ Aunque este pipeline fue validado con datos empíricos de simbiosis liquénicas,
 ### 1. Fase Experimental (Laboratorio Molecular)
 Protocolos optimizados para la obtención de datos genómicos en organismos liquenizados:
 * **Extracción de ADN:** Protocolos rápidos mediante resina Chelex® 100.
-* **PCR Multilocus:** Marcadores nucleares (ITS, LSU), mitocondriales (mtSSU) y plastidiales (rbcL).
+* **PCR Multilocus:** Marcadores nucleares (ITS) y plastidiales (rbcL).
 * **Purificación:** Limpieza enzimática mediante ExoCleanUp FAST®.
 
 ### 2. Fase Analítica (Ecología Computacional en R)
@@ -92,10 +92,14 @@ El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/script
 
 ---
 
-## 📑 Cómo citar (Citation)
+## 📑 Licencia y Citación (License & Citation)
+
+Este repositorio está protegido bajo la licencia **GNU GPL v3**. El código es de código abierto, pero **cualquier obra derivada debe mantener esta misma licencia abierta y reconocer la autoría original**.
+
+Si utiliza total o parcialmente estos scripts, funciones o metodologías para el análisis de datos en publicaciones científicas, tesis o proyectos académicos, **es obligatorio citar este trabajo** de la siguiente manera:
 
 ### Formato APA
-> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte*. GitHub Repository.
+> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte*. Repositorio de GitHub. https://github.com/Irene-Mahiques/Data-Analysis-Lichen-Symbiosis
 
 ### Formato BibTeX
 ```bibtex
@@ -104,5 +108,6 @@ El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/script
   title = {Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte},
   year = {2026},
   publisher = {GitHub},
-  journal = {GitHub repository}
+  journal = {GitHub repository},
+  url = {https://github.com/Irene-Mahiques/Data-Analysis-Lichen-Symbiosis}
 }
