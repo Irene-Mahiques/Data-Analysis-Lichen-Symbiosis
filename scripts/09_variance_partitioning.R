@@ -1,10 +1,10 @@
-# ==============================================================================
+# ==================================================================================
 # SCRIPT 09: PARTICIÓN DE LA VARIANZA (VARPART)
 # Proyecto: Lichen-Net (TFG)
 # Autora: Irene Mahiques Andrés
 # Descripción: Modelado de los determinantes de la simbiosis liquénica mediante 
-#              partición de varianza (2 y 4 vías). Diagramas de Venn vectoriales.
-# ==============================================================================
+#              partición de varianza (2, 3 y 4 vías). Diagramas de Venn vectoriales.
+# ==================================================================================
 
 # 1. CARGA DE LIBRERÍAS Y ENTORNO ----------------------------------------------
 if (!require("pacman")) install.packages("pacman")
