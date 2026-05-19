@@ -52,9 +52,9 @@ title(main = "Determinantes de la Simbiosis",
 dev.off()
 
 
-# ==============================================================================
+# ==================================================================================================
 # MODELO 2: PARTICIÓN DE 4 VÍAS (Filogenia, Geografía, Reproducción y Hábitat (Biotipo + Sustrato))
-# ==============================================================================
+# ==================================================================================================
 message("Ejecutando Modelo 2 (4 Vías Complejo)...")
 
 df_4v <- df_base %>%
@@ -85,9 +85,9 @@ title(main = "Determinantes Complejos de la Simbiosis",
 dev.off()
 
 
-# ==============================================================================
+# ================================================================================
 # MODELO 3: PARTICIÓN DE 4 VÍAS (Separando Biotipo y Sustrato, y sin reproducción)
-# ==============================================================================
+# ================================================================================
 message("Ejecutando Modelo 3 (4 Vías - Biotipo vs Sustrato)...")
 
 df_biosus <- df_base %>%
@@ -115,6 +115,46 @@ plot(mod_biosus,
 title(main = "Determinantes de la Simbiosis (Desglose Estructural)", 
       sub = paste("Familia vs Geografía vs Biotipo vs Sustrato | N =", nrow(df_biosus)), 
       font.main = 2, cex.main = 1.4)
+dev.off()
+
+
+# ==============================================================================
+# MODELO 4: PARTICIÓN DE 3 VÍAS (Familia vs Biotipo vs Sustrato)
+# ==============================================================================
+message("Ejecutando Modelo 4 (3 Vías - Genética vs Ambiente)...")
+
+# 1. Filtramos desde df_base (excluimos Geografía y Reproducción)
+df_3v <- df_base %>%
+  select(Fotobionte_clean, Familia, Biotipo, Sustrato) %>% 
+  drop_na()
+
+# 2. Creación de matrices (Los 3 pilares)
+Y_3v  <- as.data.frame(model.matrix(~ Fotobionte_clean - 1, data = df_3v))
+X1_3v <- as.data.frame(model.matrix(~ Familia - 1, data = df_3v))  # FILOGENIA
+X2_3v <- as.data.frame(model.matrix(~ Biotipo - 1, data = df_3v))  # MORFOLOGÍA
+X3_3v <- as.data.frame(model.matrix(~ Sustrato - 1, data = df_3v)) # ECOLOGÍA
+
+# 3. Análisis Varpart
+mod_3v <- varpart(Y_3v, X1_3v, X2_3v, X3_3v)
+
+# 4. Exportar Tabla de Resultados
+df_res_3v <- as.data.frame(mod_3v$part$indfract) %>%
+  mutate(Fraccion = rownames(.)) %>%
+  select(Fraccion, everything())
+write_xlsx(df_res_3v, "output/09_Tabla_Varianza_3Vias.xlsx")
+
+# 5. Exportar Figura de 3 Círculos (SVG)
+svglite("output/09_Figura_Venn_3Vias.svg", width = 10.5, height = 10.5, bg = "transparent")
+
+plot(mod_3v, 
+     Xnames = c("Familia", "Biotipo", "Sustrato"), 
+     bg = c("#4E7E1A", "#D4AC0D", "#0B536E"), # Verde oliva, Mostaza, Azul oscuro
+     alpha = 140, cex = 1.3)
+
+title(main = "Determinantes de la Simbiosis (Genética vs Ambiente)", 
+      sub = paste("Filogenia vs Morfología vs Ecología | N =", nrow(df_3v)), 
+      font.main = 2, cex.main = 1.4)
+
 dev.off()
 
 message("✅ SCRIPT 09 (Varpart): Todos los modelos ejecutados y guardados correctamente.")
