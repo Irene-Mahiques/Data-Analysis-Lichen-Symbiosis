@@ -41,36 +41,4 @@ tabla_diversidad <- data.frame(
 # Exportación de resultados
 write_xlsx(tabla_diversidad, "output/02_Tabla_Diversidad_Resultados.xlsx")
 
-# 5. VISUALIZACIÓN: GRÁFICA COMPARATIVA (SHANNON) ------------------------------
-colores_enclaves <- c(
-  "Zona completa" = "#0B536E", 
-  "Zona 1"        = "#D4AC0D", 
-  "Zona 2"        = "#3B5C11", 
-  "Zona 3"        = "#5C0C0C", 
-  "Zona 4"        = "#542D0F"
-)
-
-grafica_shannon <- ggplot(tabla_diversidad, aes(x = reorder(Zona, Shannon_H), y = Shannon_H, fill = Zona)) +
-  geom_bar(stat = "identity", color = "white", linewidth = 0.5, alpha = 0.9) +
-  coord_flip() +
-  scale_fill_manual(values = colores_enclaves) +
-  theme_minimal() +
-  labs(title = "Diversidad Alfa (Índice de Shannon) por Enclave", 
-       subtitle = "Análisis comparativo de la diversidad de micobiontes",
-       x = "", 
-       y = "Índice de Shannon (H')") +
-  theme(
-    plot.title = element_text(face = "bold", hjust = 0.5, size = 14, margin = margin(b = 5)),
-    plot.subtitle = element_text(hjust = 0.5, size = 10, color = "gray30", margin = margin(b = 15)),
-    axis.text.y = element_text(size = 12, face = "bold", color = "black"),
-    axis.text.x = element_text(size = 11, color = "black"),
-    legend.position = "none",
-    panel.grid.major.y = element_blank(),
-    panel.background = element_rect(fill = "transparent", color = NA),
-    plot.background = element_rect(fill = "transparent", color = NA)
-  )
-
-# Guardar en formato vectorial para edición en Inkscape
-ggsave("output/02_Comparativa_Shannon.svg", plot = grafica_shannon, width = 8, height = 4, bg = "transparent")
-
 message("✅ SCRIPT 02 (Diversidad Alfa): Ejecución completada con éxito.")
