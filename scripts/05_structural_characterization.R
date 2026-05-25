@@ -26,11 +26,10 @@ col_sustrato <- c("Terrícola-Muscícola"="#0B536E", "Saxícola-Terrícola"="#D4
 col_repro <- c("Sexual"="#3B5C11", "Asexual"="#542D0F")
 
 # 3. CARGA Y PREPARACIÓN DE DATOS (EXCEL) --------------------------------------
-# Usamos el archivo procesado. Evitamos conflictos con tildes en nombres de columnas.
 df <- read_excel("data/processed/DATOS_R.xlsx") %>%
   rename(Reproduccion = matches("Reproducci"))
 
-# Definimos los enclaves de estudio anonimizados (excluimos 'Zona completa')
+# Definimos los enclaves de estudio
 zonas_validas <- c("Zona 1", "Zona 2", "Zona 3", "Zona 4")
 
 # Limpieza de huecos vacíos para garantizar proporciones reales (100%)
@@ -53,15 +52,6 @@ df_clean <- df %>%
     )
   )
 
-# ------------------------------------------------------------------------------
-# 🌟 CÁLCULO DINÁMICO DEL TAMAÑO DE MUESTRA (N)
-# ------------------------------------------------------------------------------
-conteo_n <- df_clean %>% 
-  count(Zona) %>% 
-  mutate(texto = paste0(Zona, " (", n, ")"))
-
-texto_caption <- paste("N:", paste(conteo_n$texto, collapse = ", "))
-
 # 4. MAPEO DE COLORES DINÁMICO PARA FOTOBIONTES --------------------------------
 lista_frecuencia_foto <- df_clean %>%
   count(Fotobionte, sort = TRUE) %>%
@@ -72,22 +62,47 @@ colores_foto_mapping <- setNames(
   lista_frecuencia_foto
 )
 
+# --- FUNCIÓN PARA CURSIVAS INTELIGENTES ---
+formatear_leyenda <- function(etiquetas) {
+  cadenas <- sapply(etiquetas, function(x) {
+    espacio_pos <- regexpr(" ", x)
+    
+    if (espacio_pos > 0) {
+      genero <- substr(x, 1, espacio_pos - 1)
+      resto <- trimws(substr(x, espacio_pos, nchar(x)))
+      paste0("italic('", genero, "')~'", resto, "'")
+    } else {
+      paste0("italic('", x, "')")
+    }
+  })
+  parse(text = cadenas)
+}
+
 # 5. MOTOR DE RENDERIZADO (FUNCIÓN CUSTOM) -------------------------------------
-# Principio DRY (Don't Repeat Yourself) para estandarizar las gráficas
-plot_custom <- function(data, columna, titulo, mapa_colores) {
-  ggplot(data, aes(x = factor(Zona, levels = zonas_validas), fill = !!sym(columna))) +
+plot_custom <- function(data, columna, titulo, mapa_colores, es_fotobionte = FALSE) {
+  p <- ggplot(data, aes(x = factor(Zona, levels = zonas_validas), fill = !!sym(columna))) +
     geom_bar(position = "fill", color = "white", linewidth = 0.3) +
-    scale_y_continuous(labels = percent) +
-    scale_fill_manual(values = mapa_colores) +
-    labs(title = titulo, x = NULL, y = "Proporción", fill = NULL) +
+    scale_y_continuous(labels = percent)
+    
+  if (es_fotobionte) {
+    p <- p + scale_fill_manual(values = mapa_colores, labels = formatear_leyenda)
+  } else {
+    p <- p + scale_fill_manual(values = mapa_colores)
+  }
+  
+  p + labs(title = titulo, x = NULL, y = "Proporción", fill = NULL) +
     theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 35, hjust = 1, size = 10, face = "bold", color = "black"),
+      axis.text.x = element_text(angle = 35, hjust = 1, size = 16, face = "bold", color = "black"), 
+      axis.text.y = element_text(size = 14),                                                        
+      axis.title.y = element_text(size = 18, face = "bold", margin = margin(r = 10)),                
+      plot.title = element_text(face = "bold", size = 20, hjust = 0.5, margin = margin(b = 10)),    
+      legend.text = element_text(size = 16, hjust = 0),                                             
+      legend.key.size = unit(1.2, "cm"),                                                            
       panel.grid.major = element_blank(),
       panel.background = element_rect(fill = "transparent", color = NA),
       plot.background = element_rect(fill = "transparent", color = NA),
-      legend.background = element_rect(fill = "transparent", color = NA),
-      plot.title = element_text(face = "bold", size = 13, hjust = 0.5)
+      legend.background = element_rect(fill = "transparent", color = NA)
     )
 }
 
@@ -95,18 +110,19 @@ plot_custom <- function(data, columna, titulo, mapa_colores) {
 p1 <- plot_custom(df_clean, "Biotipo", "(A) Biotipo", col_biotipo)
 p2 <- plot_custom(df_clean, "Sustrato", "(B) Sustrato", col_sustrato)
 p3 <- plot_custom(df_clean, "Reproduccion", "(C) Reproducción", col_repro)
-p4 <- plot_custom(df_clean, "Fotobionte", "(D) Fotobionte", colores_foto_mapping)
+p4 <- plot_custom(df_clean, "Fotobionte", "(D) Fotobionte", colores_foto_mapping, es_fotobionte = TRUE)
 
 # 7. ENSAMBLAJE (PATCHWORK) Y EXPORTACIÓN --------------------------------------
 figura_final <- (p1 | p2) / (p3 | p4) + 
   plot_annotation(
     title = "Caracterización Estructural de la Micobiota Liquenizada",
-    caption = texto_caption, 
-    theme = theme(plot.background = element_rect(fill = "transparent", color = NA))
+    theme = theme(
+      plot.background = element_rect(fill = "transparent", color = NA),
+      plot.title = element_text(size = 28, face = "bold", hjust = 0.5, margin = margin(b = 20))
+    )
   )
 
 ggsave("output/05_Caracterizacion_Estructural_Final.svg", plot = figura_final, 
-       width = 14, height = 11, bg = "transparent")
+       width = 15, height = 12, bg = "transparent")
 
-message("✅ SCRIPT 05 (Caracterización Estructural): Figura multipanel guardada correctamente.")
-message("📊 Tamaño muestral validado: ", texto_caption)
+message("✅ SCRIPT 05 (Caracterización Estructural): Figura multipanel guardada.")
