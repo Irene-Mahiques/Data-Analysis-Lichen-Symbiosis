@@ -21,7 +21,7 @@ df_base <- read_excel("data/processed/DATOS_R.xlsx") %>%
 # ==================================================================================================
 # MODELO 1: PARTICIÓN DE 4 VÍAS (Filogenia, Geografía, Reproducción y Hábitat (Biotipo + Sustrato))
 # ==================================================================================================
-message("Ejecutando Modelo 2 (4 Vías Complejo)...")
+message("Ejecutando Modelo 1 (4 Vías Complejo)...")
 
 df_4v <- df_base %>%
   select(Fotobionte_clean, Zona, Reproduccion, Biotipo, Sustrato, Familia) %>% 
@@ -41,7 +41,7 @@ df_res_4v <- as.data.frame(mod_4v$part$indfract) %>%
 write_xlsx(df_res_4v, "output/09_Tabla_Varianza_4Vias.xlsx")
 
 # Exportar Figura Euler (SVG)
-vp_4v <- pmax(0, df_res_4v$Adj.R.squared[1:15]) * 100
+vp_4v <- pmax(0, df_res_4v$Adj.R.square[1:15]) * 100
 diag_4v <- euler(c(
   "Familia" = vp_4v[1], "Geografía" = vp_4v[2], "Reproducción" = vp_4v[3], "Hábitat" = vp_4v[4],
   "Familia&Geografía" = vp_4v[5], "Familia&Reproducción" = vp_4v[6], "Familia&Hábitat" = vp_4v[7],
@@ -64,7 +64,7 @@ dev.off()
 # ==============================================================================
 # MODELO 2: PARTICIÓN DE 3 VÍAS (Familia vs Biotipo vs Sustrato)
 # ==============================================================================
-message("Ejecutando Modelo 4 (3 Vías - Genética vs Ambiente)...")
+message("Ejecutando Modelo 2 (3 Vías - Genética vs Ambiente)...")
 
 df_3v <- df_base %>%
   select(Fotobionte_clean, Familia, Biotipo, Sustrato) %>% 
@@ -83,7 +83,7 @@ df_res_3v <- as.data.frame(mod_3v$part$indfract) %>%
 write_xlsx(df_res_3v, "output/09_Tabla_Varianza_3Vias.xlsx")
 
 # Exportar Figura Euler (SVG)
-vp_3v <- pmax(0, df_res_3v$Adj.R.squared[1:7]) * 100
+vp_3v <- pmax(0, df_res_3v$Adj.R.square[1:7]) * 100
 diag_3v <- euler(c(
   "Familia" = vp_3v[1], "Biotipo" = vp_3v[2], "Sustrato" = vp_3v[3],
   "Familia&Biotipo" = vp_3v[4], "Familia&Sustrato" = vp_3v[5], "Biotipo&Sustrato" = vp_3v[6],
