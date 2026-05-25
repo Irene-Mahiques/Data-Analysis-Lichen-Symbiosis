@@ -86,17 +86,17 @@ df_plot <- df_final %>%
 
 grafica <- ggplot(df_plot, aes(x = c_valor, y = z_valor)) +
   # Líneas de umbral topológico
-  geom_hline(yintercept = 2.5, linetype = "dashed", color = "red", linewidth = 0.8, alpha = 0.5) +
-  geom_vline(xintercept = 0.62, linetype = "dashed", color = "red", linewidth = 0.8, alpha = 0.5) +
+  geom_hline(yintercept = 2.5, linetype = "dashed", color = "red", linewidth = 1.2, alpha = 0.5) +
+  geom_vline(xintercept = 0.62, linetype = "dashed", color = "red", linewidth = 1.2, alpha = 0.5) +
   
   # Dispersión con 'jitter' para separar solapamientos en nodos periféricos
-  geom_point(aes(color = Nivel), size = 4, alpha = 0.6, 
+  geom_point(aes(color = Nivel), size = 8, alpha = 0.6, 
              position = position_jitter(width = 0.015, height = 0.03)) +
   
   # Anotación inteligente (solo conectores para evitar sobrecarga visual)
   geom_text_repel(data = filter(df_plot, Rol_Olesen == "Conector (Especie Clave)"),
-                  aes(label = Especie), fontface = "bold.italic", size = 4,
-                  box.padding = 0.7, point.padding = 0.4, segment.color = 'grey50') +
+                  aes(label = Especie), fontface = "bold.italic", size = 7,
+                  box.padding = 1, point.padding = 0.5, segment.color = 'grey50', segment.size = 1) +
   
   coord_cartesian(xlim = c(-0.05, 0.8), ylim = c(-1.5, 3)) +
   facet_wrap(~Tipo_Red) +
@@ -112,12 +112,20 @@ grafica <- ggplot(df_plot, aes(x = c_valor, y = z_valor)) +
     plot.background = element_blank(),
     legend.background = element_blank(),
     strip.background = element_rect(fill = "#2C3E50"),
-    strip.text = element_text(color = "white", face = "bold"),
     legend.position = "bottom",
-    legend.title = element_blank()
+    legend.title = element_blank(),
+    
+    plot.title = element_text(face = "bold", size = 24, hjust = 0.5, margin = margin(b = 10)),
+    plot.subtitle = element_text(size = 18, hjust = 0.5, margin = margin(b = 20), color = "grey30"),
+    strip.text = element_text(color = "white", face = "bold", size = 18),
+    axis.title.x = element_text(size = 18, face = "bold", margin = margin(t = 15)),
+    axis.title.y = element_text(size = 18, face = "bold", margin = margin(r = 15)),
+    axis.text = element_text(size = 16, color = "black"),
+    legend.text = element_text(size = 18),
+    legend.key.size = unit(1.5, "cm")
   )
 
 ggsave("output/08_Grafica_Roles_Olesen_Final.svg", grafica, 
-       width = 12, height = 8, bg = "transparent")
+       width = 14, height = 9, bg = "transparent")
 
 message("✅ SCRIPT 08 (Roles Olesen): Ejecución completada y guardada.")
