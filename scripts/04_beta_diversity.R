@@ -14,7 +14,8 @@ pacman::p_load(dplyr, tidyr, vegan, ggplot2, ggdendro, svglite, readxl)
 if (!dir.exists("output")) dir.create("output")
 
 # 2. CARGA DE DATOS LIMPIOS (EXCEL) --------------------------------------------
-datos_limpios <- read_excel("data/processed/DATOS_R.xlsx")
+datos_limpios <- read_excel("data/processed/DATOS_R.xlsx") %>%
+  filter(!is.na(Zona), !is.na(Micobionte_clean)) # Elimina filas con huecos clave
 
 # 3. CONSTRUCCIÓN DE LA MATRIZ DE COMUNIDAD ------------------------------------
 matriz_comunidad <- datos_limpios %>%
@@ -61,7 +62,9 @@ grafica_cluster <- ggplot() +
     plot.subtitle = element_text(hjust = 0.5, size = 11, color = "gray40", margin = margin(b=15)),
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
-    axis.title.y = element_text(face = "bold", margin = margin(r = 10)),
+    axis.text.y = element_text(size = 14),                                           # Números del eje Y
+    axis.title.y = element_text(face = "bold", size = 16, margin = margin(r = 10)),  # Título del eje Y
+    # ------------------------------------
     panel.grid.major.x = element_blank(),
     panel.grid.minor = element_blank(),
     panel.background = element_rect(fill = "transparent", color = NA),
