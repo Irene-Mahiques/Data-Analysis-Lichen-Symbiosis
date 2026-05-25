@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='612.00pt' height='432.00pt' viewBox='0 0 612.00 432.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHw2MTIuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='612.00' height='432.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw2MTIuMDB8MC4wMHw0MzIuMDA=)'>
+<line x1='224.00' y1='344.16' x2='520.00' y2='344.16' style='stroke-width: 0.75;' />
+<line x1='224.00' y1='344.16' x2='224.00' y2='351.36' style='stroke-width: 0.75;' />
+<line x1='372.00' y1='344.16' x2='372.00' y2='351.36' style='stroke-width: 0.75;' />
+<line x1='520.00' y1='344.16' x2='520.00' y2='351.36' style='stroke-width: 0.75;' />
+<text x='224.00' y='370.08' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='8.68px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='372.00' y='370.08' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='17.35px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='520.00' y='370.08' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='17.35px' lengthAdjust='spacingAndGlyphs'>15</text>
+<line x1='87.84' y1='311.35' x2='87.84' y2='83.47' style='stroke-width: 0.75;' />
+<line x1='87.84' y1='311.35' x2='80.64' y2='311.35' style='stroke-width: 0.75;' />
+<line x1='87.84' y1='265.77' x2='80.64' y2='265.77' style='stroke-width: 0.75;' />
+<line x1='87.84' y1='220.19' x2='80.64' y2='220.19' style='stroke-width: 0.75;' />
+<line x1='87.84' y1='174.62' x2='80.64' y2='174.62' style='stroke-width: 0.75;' />
+<line x1='87.84' y1='129.04' x2='80.64' y2='129.04' style='stroke-width: 0.75;' />
+<line x1='87.84' y1='83.47' x2='80.64' y2='83.47' style='stroke-width: 0.75;' />
+<text transform='translate(70.56,311.35) rotate(-90)' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='8.68px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text transform='translate(70.56,265.77) rotate(-90)' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='8.68px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text transform='translate(70.56,220.19) rotate(-90)' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='8.68px' lengthAdjust='spacingAndGlyphs'>6</text>
+<text transform='translate(70.56,174.62) rotate(-90)' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='8.68px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text transform='translate(70.56,129.04) rotate(-90)' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='17.35px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text transform='translate(70.56,83.47) rotate(-90)' text-anchor='middle' style='font-size: 15.60px; font-family: "Arial";' textLength='17.35px' lengthAdjust='spacingAndGlyphs'>12</text>
+<polygon points='87.84,344.16 567.36,344.16 567.36,73.44 87.84,73.44 ' style='stroke-width: 0.75;' />
+<text x='327.60' y='45.31' text-anchor='middle' style='font-size: 24.00px; font-weight: bold; font-family: "Arial";' textLength='402.83px' lengthAdjust='spacingAndGlyphs'>Curvas de Rarefacción por Enclave</text>
+<text x='327.60' y='398.88' text-anchor='middle' style='font-size: 19.20px; font-family: "Arial";' textLength='332.23px' lengthAdjust='spacingAndGlyphs'>Esfuerzo de Muestreo (Nº de registros)</text>
+<text transform='translate(41.76,208.80) rotate(-90)' text-anchor='middle' style='font-size: 19.20px; font-family: "Arial";' textLength='291.90px' lengthAdjust='spacingAndGlyphs'>Riqueza Esperada de Taxones (S)</text>
+</g>
+<defs>
+  <clipPath id='cpODcuODR8NTY3LjM2fDczLjQ0fDM0NC4xNg=='>
+    <rect x='87.84' y='73.44' width='479.52' height='270.72' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpODcuODR8NTY3LjM2fDczLjQ0fDM0NC4xNg==)'>
+<polyline points='105.60,334.13 135.20,312.10 164.80,290.81 194.40,270.28 224.00,250.49 253.60,231.46 283.20,213.18 312.80,195.65 342.40,178.88 372.00,162.85 401.60,147.57 431.20,133.05 460.80,119.28 490.40,106.25 ' style='stroke-width: 2.25; stroke: #D4AC0D;' />
+<polyline points='105.60,334.13 135.20,311.85 164.80,290.06 194.40,268.77 224.00,247.99 253.60,227.71 283.20,207.92 312.80,188.64 342.40,169.86 372.00,151.58 401.60,133.80 431.20,116.52 460.80,99.74 490.40,83.47 ' style='stroke-width: 2.25; stroke: #3B5C11;' />
+<polyline points='105.60,334.13 135.20,311.69 164.80,289.59 194.40,267.84 224.00,246.43 253.60,225.37 283.20,204.66 312.80,184.29 342.40,164.26 372.00,144.58 401.60,125.24 431.20,106.25 ' style='stroke-width: 2.25; stroke: #0B536E;' />
+<polyline points='105.60,334.13 135.20,314.38 164.80,297.31 194.40,282.56 224.00,269.83 253.60,258.82 283.20,249.27 312.80,240.94 342.40,233.60 372.00,227.08 401.60,221.20 431.20,215.82 460.80,210.83 490.40,206.14 520.00,201.68 549.60,197.41 ' style='stroke-width: 2.25; stroke: #542D0F;' />
+</g>
+<g clip-path='url(#cpMC4wMHw2MTIuMDB8MC4wMHw0MzIuMDA=)'>
+<polygon points='459.58,116.28 521.22,116.28 521.22,96.23 459.58,96.23 ' style='stroke-width: 2.25; fill: #FFFFFF;' />
+<text x='490.40' y='112.19' text-anchor='middle' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 1</text>
+<polygon points='459.58,93.49 521.22,93.49 521.22,73.44 459.58,73.44 ' style='stroke-width: 2.25; fill: #FFFFFF;' />
+<text x='490.40' y='89.40' text-anchor='middle' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 2</text>
+<polygon points='400.38,116.28 462.02,116.28 462.02,96.23 400.38,96.23 ' style='stroke-width: 2.25; fill: #FFFFFF;' />
+<text x='431.20' y='112.18' text-anchor='middle' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 3</text>
+<polygon points='518.78,207.43 580.42,207.43 580.42,187.38 518.78,187.38 ' style='stroke-width: 2.25; fill: #FFFFFF;' />
+<text x='549.60' y='203.32' text-anchor='middle' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 4</text>
+</g>
+<g clip-path='url(#cpODcuODR8NTY3LjM2fDczLjQ0fDM0NC4xNg==)'>
+<line x1='462.13' y1='263.52' x2='492.37' y2='263.52' style='stroke-width: 2.25; stroke: #D4AC0D;' />
+<line x1='462.13' y1='283.68' x2='492.37' y2='283.68' style='stroke-width: 2.25; stroke: #3B5C11;' />
+<line x1='462.13' y1='303.84' x2='492.37' y2='303.84' style='stroke-width: 2.25; stroke: #0B536E;' />
+<line x1='462.13' y1='324.00' x2='492.37' y2='324.00' style='stroke-width: 2.25; stroke: #542D0F;' />
+<text x='507.49' y='269.54' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 1</text>
+<text x='507.49' y='289.70' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 2</text>
+<text x='507.49' y='309.86' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 3</text>
+<text x='507.49' y='330.02' style='font-size: 16.80px; font-family: "Arial";' textLength='52.31px' lengthAdjust='spacingAndGlyphs'>Zona 4</text>
+</g>
+</svg>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='1152.00pt' height='720.00pt' viewBox='0 0 1152.00 720.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHwxMTUyLjAwfDAuMDB8NzIwLjAw'>
+    <rect x='0.00' y='0.00' width='1152.00' height='720.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwxMTUyLjAwfDAuMDB8NzIwLjAw)'>
+</g>
+<defs>
+  <clipPath id='cpMzYuMDB8MTExNi4wMHwzNi4wMHw2ODQuMDA='>
+    <rect x='36.00' y='36.00' width='1080.00' height='648.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMzYuMDB8MTExNi4wMHwzNi4wMHw2ODQuMDA=)'>
+<rect x='76.00' y='124.29' width='58.96' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(109.13,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 1</text>
+<rect x='144.40' y='124.29' width='176.89' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(236.48,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 2</text>
+<rect x='330.72' y='124.29' width='58.96' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(363.84,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 4</text>
+<rect x='399.11' y='124.29' width='58.96' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(432.24,117.63) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 6</text>
+<rect x='467.51' y='124.29' width='530.66' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(736.48,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 8</text>
+<rect x='1007.60' y='124.29' width='58.96' height='42.86' style='stroke-width: 0.75; fill: #542D0F;' />
+<text transform='translate(1040.73,122.78) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='100.06px' lengthAdjust='spacingAndGlyphs'>Fotobionte 3</text>
+<rect x='76.00' y='552.86' width='884.43' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(521.86,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='108.04px' lengthAdjust='spacingAndGlyphs'>Escuamuloso</text>
+<rect x='1007.60' y='552.86' width='58.96' height='42.86' style='stroke-width: 0.75; fill: #3B5C11;' />
+<text transform='translate(1040.73,604.51) rotate(-45)' text-anchor='middle' style='font-size: 18.00px; font-family: "Arial";' textLength='68.02px' lengthAdjust='spacingAndGlyphs'>Foliaceo</text>
+<polygon points='467.51,167.14 998.17,167.14 960.43,552.86 429.77,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='144.40,167.14 321.28,167.14 311.85,552.86 134.96,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='76.00,167.14 134.96,167.14 134.96,552.86 76.00,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='330.72,167.14 389.68,167.14 370.81,552.86 311.85,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='399.11,167.14 458.08,167.14 429.77,552.86 370.81,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+<polygon points='1007.60,167.14 1066.57,167.14 1066.57,552.86 1007.60,552.86 ' style='stroke-width: 0.75; stroke: #C5C5C5; fill: #EAEBED;' />
+</g>
+</svg>
