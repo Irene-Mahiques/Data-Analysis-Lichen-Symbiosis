@@ -2,7 +2,7 @@
 # SCRIPT 02: ÍNDICES DE DIVERSIDAD ALFA
 # Proyecto: Lichen-Net (TFG)
 # Autora: Irene Mahiques Andrés
-# Descripción: Inferencia de diversidad Alfa y generación de gráficos (SVG).
+# Descripción: Inferencia de diversidad Alfa.
 # ==============================================================================
 
 # 1. CARGA DE LIBRERÍAS Y ENTORNO ----------------------------------------------
