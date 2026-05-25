@@ -11,7 +11,7 @@
 ---
 
 ## 🎯 Resumen del Proyecto
-Este repositorio documenta el flujo de trabajo desarrollado para el modelado de redes de interacción bipartitas entre micobiontes y fotobiontes en ecosistemas de la Comunidad Valenciana ($N=576$). 
+Este repositorio documenta el flujo de trabajo desarrollado para el modelado de redes de interacción bipartitas entre micobiontes y fotobiontes en ecosistemas de la Comunidad Valenciana. 
 
 El proyecto integra protocolos de **laboratorio molecular** (extracción y amplificación de marcadores multilocus) con un robusto **pipeline de análisis estadístico en R** para cuantificar la estabilidad y arquitectura de las simbiosis liquénicas.
 
@@ -32,8 +32,8 @@ Aunque este pipeline fue validado con datos empíricos de simbiosis liquénicas,
 
 ### 1. Fase Experimental (Laboratorio Molecular)
 Protocolos optimizados para la obtención de datos genómicos en organismos liquenizados:
-* **Extracción de ADN:** Protocolos rápidos mediante resina Chelex® 100.
-* **PCR Multilocus:** Marcadores nucleares (ITS) y plastidiales (rbcL).
+* **Extracción de ADN:** Protocolo rápido mediante resina Chelex® 100.
+* **PCR:** Marcador nuclear (ITS).
 * **Purificación:** Limpieza enzimática mediante ExoCleanUp FAST®.
 
 ### 2. Fase Analítica (Ecología Computacional en R)
