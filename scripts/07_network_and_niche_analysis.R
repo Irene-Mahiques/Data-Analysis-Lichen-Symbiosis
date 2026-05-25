@@ -107,16 +107,26 @@ df_niche <- df_final %>%
   pivot_longer(cols = c(Niche_Micobiontes, Niche_Recursos), names_to = "Simbionte", values_to = "Valor")
 
 grafica_nicho <- ggplot(df_niche, aes(x = Valor, y = factor(Zona, levels = orden_zonas))) +
-  geom_line(aes(group = Zona), color = "grey70", linewidth = 1.2) +
-  geom_point(aes(color = Simbionte), size = 5) +
+  geom_line(aes(group = Zona), color = "grey70", linewidth = 2) +
+  geom_point(aes(color = Simbionte), size = 8) +
   facet_wrap(~Tipo_Red) +
   scale_color_manual(values = c("Niche_Micobiontes" = "#3B5C11", "Niche_Recursos" = "#542D0F"),
-                     labels = c("Micobiontes", "Recursos (Sustrato/Alga)")) +
-  labs(title = "Solapamiento de Nicho (Niche Overlap)",
-       subtitle = "Comparativa de la amplitud de nicho entre niveles tróficos",
-       x = "Índice de Solapamiento", y = NULL, color = "Nivel") +
+                     labels = c("Micobiontes (Hongos)", "Recursos (Sustrato/Alga)")) +
+  labs(title = "Asimetría en la Compartición de Socios (Niche Overlap)",
+       x = "Índice de Solapamiento", y = NULL, color = "Nivel Trófico") +
   theme_minimal() +
-  theme(legend.position = "top", strip.text = element_text(face = "bold", size = 11))
+  theme(
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA),
+    legend.position = "top",
+    plot.title = element_text(face = "bold", size = 22, hjust = 0.5, margin = margin(b = 20)),
+    strip.text = element_text(face = "bold", size = 16),
+    axis.text.y = element_text(size = 16, face = "bold", color = "black"),
+    axis.text.x = element_text(size = 15),
+    axis.title.x = element_text(size = 18, face = "bold", margin = margin(t = 15)),
+    legend.title = element_text(size = 16, face = "bold"),
+    legend.text = element_text(size = 15)
+  )
 
 # --- Gráfica B: Topología Comparativa ---
 df_topol <- df_final %>%
@@ -126,17 +136,26 @@ df_topol <- df_final %>%
                           levels = c("Conectancia", "Anidamiento (NODF)", "Modularidad (Q)")))
 
 grafica_topologia <- ggplot(df_topol, aes(x = Valor, y = factor(Zona, levels = orden_zonas), color = Zona)) +
-  geom_point(size = 6) +
+  geom_point(size = 9) +
   facet_grid(Tipo_Red ~ Metrica, scales = "free_x") + 
   scale_color_manual(values = c("Zona completa"="#001F3F", "Zona 1"="#D4AC0D", 
                                 "Zona 2"="#3B5C11", "Zona 3"="#5C0C0C", "Zona 4"="#542D0F")) +
-  labs(title = "Arquitectura de las Redes Simbióticas", x = "Valor del Índice", y = NULL) +
+  labs(title = "Arquitectura de las Redes Liquénicas", x = "Valor del Índice", y = NULL) +
   theme_light() +
-  theme(legend.position = "none", strip.background = element_rect(fill = "#2C3E50"),
-        strip.text = element_text(color = "white", face = "bold"))
+  theme(
+    plot.background = element_rect(fill = "transparent", color = NA),
+    panel.background = element_rect(fill = "transparent", color = NA),
+    legend.position = "none", 
+    strip.background = element_rect(fill = "#2C3E50"),
+    plot.title = element_text(face = "bold", size = 24, hjust = 0.5, margin = margin(b = 20)),
+    strip.text = element_text(color = "white", face = "bold", size = 16),
+    axis.text.y = element_text(size = 16, face = "bold", color = "black"),
+    axis.text.x = element_text(size = 14),
+    axis.title.x = element_text(size = 18, face = "bold", margin = margin(t = 15))
+  )
 
 # Exportación final para Inkscape
-ggsave("output/07_Grafica_Nichos.svg", grafica_nicho, width = 12, height = 6, bg = "transparent")
-ggsave("output/07_Grafica_Topologia.svg", grafica_topologia, width = 14, height = 8, bg = "transparent")
+ggsave("output/07_Grafica_Nichos.svg", grafica_nicho, width = 14, height = 7, bg = "transparent")
+ggsave("output/07_Grafica_Topologia.svg", grafica_topologia, width = 16, height = 9, bg = "transparent")
 
 message("✅ SCRIPT 07 (Redes y Nichos): Análisis topológico completado.")
