@@ -30,7 +30,6 @@ calcular_olesen_cv <- function(matriz_cruda, tipo) {
   # Inferencia de Módulos y Roles (Bipartite)
   mod <- computeModules(matriz)
   cz <- czvalues(mod)
-  d_vals <- specieslevel(matriz, index = "d")
   
   # Sanitización de strings para cruce seguro de diccionarios
   limpiar_nombres <- function(x) gsub("[[:punct:] ]", "", tolower(x))
@@ -43,16 +42,14 @@ calcular_olesen_cv <- function(matriz_cruda, tipo) {
     Especie = rownames(matriz), 
     Nivel = "Micobionte (Hongo)",
     c_valor = as.numeric(v_c[limpiar_nombres(rownames(matriz))]),
-    z_valor = as.numeric(v_z[limpiar_nombres(rownames(matriz))]),
-    Selectividad = as.numeric(d_vals$`lower level`$d)
+    z_valor = as.numeric(v_z[limpiar_nombres(rownames(matriz))])
   )
   
   df_r <- data.frame(
     Especie = colnames(matriz), 
     Nivel = "Recurso (Alga/Sustrato)",
     c_valor = as.numeric(v_c[limpiar_nombres(colnames(matriz))]),
-    z_valor = as.numeric(v_z[limpiar_nombres(colnames(matriz))]),
-    Selectividad = as.numeric(d_vals$`higher level`$d)
+    z_valor = as.numeric(v_z[limpiar_nombres(colnames(matriz))])
   )
   
   # Clasificación de Roles según umbrales de Olesen (2007)
