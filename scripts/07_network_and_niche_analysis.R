@@ -13,7 +13,6 @@ pacman::p_load(readxl, dplyr, ggplot2, tidyr, bipartite, writexl, svglite)
 
 # Asegurar directorios de salida
 if (!dir.exists("output")) dir.create("output")
-if (!dir.exists("output/modulos")) dir.create("output/modulos") 
 
 # 2. CARGA Y PREPARACIÓN DE DATOS (EXCEL) --------------------------------------
 df <- read_excel("data/processed/DATOS_R.xlsx")
@@ -88,7 +87,7 @@ extraer_modulos_cv <- function(tabla_cruda, nombre_zona, sufijo) {
   mis_modulos <- computeModules(matriz)
   info_bruta <- listModuleInformation(mis_modulos)
   
-  # Función interna para sacar SOLO los módulos pequeños finales
+  # Función interna para sacar SOLO las cajitas pequeñas finales
   extraer_cajas <- function(nodo) {
     if (is.list(nodo) && length(nodo) == 2 && is.character(nodo[[1]]) && is.character(nodo[[2]])) {
       return(list(nodo))
@@ -129,7 +128,7 @@ extraer_modulos_cv <- function(tabla_cruda, nombre_zona, sufijo) {
   }
   
   nombre_limpio <- gsub(" ", "_", nombre_zona)
-  ruta_excel <- paste0("output/modulos/Composicion_Modulos_", nombre_limpio, "_", sufijo, ".xlsx")
+  ruta_excel <- paste0("output/Composicion_Modulos_", nombre_limpio, "_", sufijo, ".xlsx")
   write_xlsx(df_modulos, ruta_excel)
 }
 
