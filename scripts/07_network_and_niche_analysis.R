@@ -128,7 +128,7 @@ extraer_modulos_cv <- function(tabla_cruda, nombre_zona, sufijo) {
   }
   
   nombre_limpio <- gsub(" ", "_", nombre_zona)
-  ruta_excel <- paste0("output/Composicion_Modulos_", nombre_limpio, "_", sufijo, ".xlsx")
+  ruta_excel <- paste0("output/07_Composicion_Modulos_", nombre_limpio, "_", sufijo, ".xlsx")
   write_xlsx(df_modulos, ruta_excel)
 }
 
