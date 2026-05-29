@@ -1,17 +1,19 @@
 # ==============================================================================
-# SCRIPT 07: TOPOLOGÍA DE REDES Y SOLAPAMIENTO DE NICHO
+# SCRIPT 07: TOPOLOGÍA DE REDES, SOLAPAMIENTO DE NICHO Y MÓDULOS
 # Proyecto: Lichen-Net (TFG)
 # Autora: Irene Mahiques Andrés
-# Descripción: Cálculo de métricas de red (Conectancia, NODF, Modularidad Q)
-#              e índices de solapamiento de nicho mediante modelos nulos.
+# Descripción: Cálculo de métricas de red (Conectancia, NODF, Modularidad Q),
+#              índices de solapamiento de nicho y extracción de composición
+#              de módulos (Excel).
 # ==============================================================================
 
 # 1. CARGA DE LIBRERÍAS Y ENTORNO ----------------------------------------------
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(readxl, dplyr, ggplot2, tidyr, bipartite, writexl, svglite)
 
-# Asegurar directorio de salida
+# Asegurar directorios de salida
 if (!dir.exists("output")) dir.create("output")
+if (!dir.exists("output/modulos")) dir.create("output/modulos") 
 
 # 2. CARGA Y PREPARACIÓN DE DATOS (EXCEL) --------------------------------------
 df <- read_excel("data/processed/DATOS_R.xlsx")
@@ -22,8 +24,9 @@ df_clean <- df %>% filter(Zona %in% zonas_base)
 df_total <- bind_rows(df_clean, df_clean %>% mutate(Zona = "Zona completa"))
 todas_las_zonas <- c("Zona completa", zonas_base)
 
-# 3. FUNCIÓN DE ANÁLISIS DE RED ----------------------------------------
-# Esta función ejecuta el pipeline de topología e inferencia mediante modelos nulos
+# 3. FUNCIONES DE ANÁLISIS DE RED Y MÓDULOS ------------------------------------
+
+# --- FUNCIÓN A: Cálculos topológicos generales ---
 calcular_red_completa <- function(tabla_cruda, nombre_zona, tipo_red) {
   
   # Limpieza de matriz: eliminamos vacíos SIN perder las dimensiones
@@ -62,7 +65,6 @@ calcular_red_completa <- function(tabla_cruda, nombre_zona, tipo_red) {
     message(paste("⚠️ Matriz demasiado pequeña para", nombre_zona, "-", tipo_red, "(Saltando cálculos de red pura)"))
     v_conn <- NA; v_nodf <- NA; z_nodf <- NA; mod_emp <- NA; v_LL <- NA; v_HL <- NA
   }
-  # --------------------------------------------------
   
   return(data.frame(
     Zona = nombre_zona, Tipo_Red = tipo_red,
@@ -75,7 +77,64 @@ calcular_red_completa <- function(tabla_cruda, nombre_zona, tipo_red) {
   ))
 }
 
+# --- FUNCIÓN B: Extracción Limpia de Módulos a Excel ---
+extraer_modulos_cv <- function(tabla_cruda, nombre_zona, sufijo) {
+  # Filtro: Solo calculamos módulos para la meta-red
+  if(nombre_zona != "Zona completa") return(NULL)
+  
+  matriz <- empty(as.matrix(as.data.frame.matrix(tabla_cruda)))
+  if(nrow(matriz) < 2 | ncol(matriz) < 2) return(NULL)
+  
+  mis_modulos <- computeModules(matriz)
+  info_bruta <- listModuleInformation(mis_modulos)
+  
+  # Función interna para sacar SOLO los módulos pequeños finales
+  extraer_cajas <- function(nodo) {
+    if (is.list(nodo) && length(nodo) == 2 && is.character(nodo[[1]]) && is.character(nodo[[2]])) {
+      return(list(nodo))
+    } else if (is.list(nodo)) {
+      res <- list()
+      for (i in seq_along(nodo)) {
+        res <- c(res, extraer_cajas(nodo[[i]]))
+      }
+      return(res)
+    }
+    return(list())
+  }
+  
+  cajas_planas <- extraer_cajas(info_bruta)
+  
+  # Preparamos el Excel
+  df_modulos <- data.frame(
+    Zona = character(), Tipo_Red = character(), Modulo = character(), 
+    Micobiontes = character(), Socios_Ecologicos = character(), stringsAsFactors = FALSE
+  )
+  
+  contador_modulo <- 1 
+  
+  for(i in seq_along(cajas_planas)) {
+    hongos <- cajas_planas[[i]][[1]]
+    socios <- cajas_planas[[i]][[2]]
+    
+    # Filtro: Evitar el módulo "basura" sobredimensionado
+    if(length(hongos) < 150) { 
+      df_modulos <- rbind(df_modulos, data.frame(
+        Zona = nombre_zona, Tipo_Red = sufijo, 
+        Modulo = paste("Módulo", contador_modulo), 
+        Micobiontes = paste(hongos, collapse = ", "),
+        Socios_Ecologicos = paste(socios, collapse = ", ")
+      ))
+      contador_modulo <- contador_modulo + 1
+    }
+  }
+  
+  nombre_limpio <- gsub(" ", "_", nombre_zona)
+  ruta_excel <- paste0("output/modulos/Composicion_Modulos_", nombre_limpio, "_", sufijo, ".xlsx")
+  write_xlsx(df_modulos, ruta_excel)
+}
+
 # 4. EJECUCIÓN DEL BUCLE DE ANÁLISIS -------------------------------------------
+message("Procesando redes. Solo se extraerán módulos para la Zona completa...")
 resultados_lista <- list()
 
 for(z in todas_las_zonas) {
@@ -86,6 +145,7 @@ for(z in todas_las_zonas) {
   if(nrow(temp_sus) > 0) {
     t_sus <- table(temp_sus$Micobionte_clean, temp_sus$Sustrato)
     resultados_lista[[paste(z, "S")]] <- calcular_red_completa(t_sus, z, "Red Espacial (Sustrato)")
+    extraer_modulos_cv(t_sus, z, "Sustrato") 
   }
   
   # B. Red Biológica (Fotobiontes)
@@ -93,6 +153,7 @@ for(z in todas_las_zonas) {
   if(nrow(temp_fot) > 0) {
     t_fot <- table(temp_fot$Micobionte_clean, temp_fot$Fotobionte_clean)
     resultados_lista[[paste(z, "F")]] <- calcular_red_completa(t_fot, z, "Red Biológica (Fotobionte)")
+    extraer_modulos_cv(t_fot, z, "Fotobionte") 
   }
 }
 
@@ -158,4 +219,4 @@ grafica_topologia <- ggplot(df_topol, aes(x = Valor, y = factor(Zona, levels = o
 ggsave("output/07_Grafica_Nichos.svg", grafica_nicho, width = 14, height = 7, bg = "transparent")
 ggsave("output/07_Grafica_Topologia.svg", grafica_topologia, width = 16, height = 9, bg = "transparent")
 
-message("✅ SCRIPT 07 (Redes y Nichos): Análisis topológico completado.")
+message("✅ SCRIPT 07 (Redes y Nichos): Análisis topológico y extracción de módulos completado.")
