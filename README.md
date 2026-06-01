@@ -51,12 +51,12 @@ El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/script
 * `09_variance_partitioning.R`: Partición de varianza para determinar el peso de la geografía, biología y filogenia.
 
 #### III. Análisis de Redes y Nichos
-* `07_network_and_niche_analysis.R`: Inferencia de anidamiento (NODF) y solapamiento de nicho (*niche overlap*).
+* `07_network_and_niche_analysis.R`: Inferencia de conectancia, anidamiento (NODF), solapamiento de nicho (*niche overlap*) y modularidad (Q).
 * `08_topological_roles_olesen.R`: Clasificación de especies en *Hubs* y *Conectores* (Análisis z-c).
 * `12_bipartite_network_plots.R`: Generación de diagramas visuales de red en formato vectorial (SVG).
 
 #### IV. Consolidación de Resultados
-* `10_network_descriptives.R`: Extracción de KPIs (N total de muestras, nodos y enlaces).
+* `10_network_descriptives.R`: Extracción de estadísticos descriptivos básicos de las comunidades (N total de muestras, nodos y enlaces).
 * `11_floristic_catalogue.R`: Generación del inventario taxonómico y funcional automatizado.
 
 ---
