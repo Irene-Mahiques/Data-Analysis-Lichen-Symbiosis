@@ -136,13 +136,13 @@ resultados_lista <- list()
 for(z in todas_las_zonas) {
   temp_df <- df_total %>% filter(Zona == z)
   
-  t_sus <- table(temp_df$Micobionte_clean[!is.na(temp_df$Sustrato)], temp_df$Sustrato[!is.na(temp_df$Sustrato)])
+  t_sus <- table(temp_df$Micobionte[!is.na(temp_df$Sustrato)], temp_df$Sustrato[!is.na(temp_df$Sustrato)])
   if(sum(t_sus) > 0) {
     resultados_lista[[paste(z, "S")]] <- calcular_red_completa(t_sus, z, "Red Espacial (Sustrato)")
     extraer_modulos_cv(t_sus, z, "Sustrato") 
   }
   
-  t_fot <- table(temp_df$Micobionte_clean[!is.na(temp_df$Fotobionte_clean)], temp_df$Fotobionte_clean[!is.na(temp_df$Fotobionte_clean)])
+  t_fot <- table(temp_df$Micobionte[!is.na(temp_df$Fotobionte)], temp_df$Fotobionte[!is.na(temp_df$Fotobionte)])
   if(sum(t_fot) > 0) {
     resultados_lista[[paste(z, "F")]] <- calcular_red_completa(t_fot, z, "Red Biológica (Fotobionte)")
     extraer_modulos_cv(t_fot, z, "Fotobionte") 
@@ -210,4 +210,4 @@ grafica_topologia <- ggplot(df_topol, aes(x = Valor, y = factor(Zona, levels = o
 ggsave("output/07_Grafica_Nichos.svg", grafica_nicho, width = 14, height = 7, bg = "transparent")
 ggsave("output/07_Grafica_Topologia.svg", grafica_topologia, width = 16, height = 9, bg = "transparent")
 
-message("✅ SSCRIPT 07 (Redes y Nichos): Análisis topológico y extracción de módulos completado.")
+message("✅ SCRIPT 07 (Redes y Nichos): Análisis topológico y extracción de módulos completado.")
