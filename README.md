@@ -1,5 +1,5 @@
-# 🍄 Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte
-### Una aproximación funcional y multiescala
+# 🍄 Lichen-Net: Arquitectura funcional de las redes de interacción mico-fotobionte
+### Una aproximación multiescala
 
 [![R-v4.3.2](https://img.shields.io/badge/R-v4.3.2-blue.svg)](https://www.r-project.org/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -13,7 +13,7 @@
 ## 🎯 Resumen del Proyecto
 Este repositorio documenta el flujo de trabajo desarrollado para el modelado de redes de interacción bipartitas entre micobiontes y fotobiontes en ecosistemas de la Comunidad Valenciana. 
 
-El proyecto integra protocolos de **laboratorio molecular** (extracción y amplificación de marcadores multilocus) con un robusto **pipeline de análisis estadístico en R** para cuantificar la estabilidad y arquitectura de las simbiosis liquénicas.
+El proyecto integra protocolos de **laboratorio molecular** (extracción y amplificación) con un robusto **pipeline de análisis estadístico en R** para cuantificar la estabilidad y arquitectura de las simbiosis liquénicas.
 
 ---
 
@@ -42,11 +42,11 @@ El flujo de trabajo se divide en 12 etapas secuenciales (disponibles en `/script
 #### I. Preprocesamiento y Biodiversidad
 * `01_data_cleaning.R`: Limpieza, estandarización taxonómica y manejo de *missing values*.
 * `02_alpha_diversity.R`: Cálculo de índices de Shannon, Simpson y Equidad de Pielou.
-* `03_rarefaction_curves.R`: Validación del esfuerzo de muestreo mediante curvas de acumulación.
+* `03_rarefaction_curves.R`: Validación del esfuerzo de muestreo mediante curvas de rarefacción.
 * `04_beta_diversity.R`: Análisis de similitud florística (Bray-Curtis & Ward.D2).
 
 #### II. Ecología Funcional y Modelado
-* `05_structural_characterization.R`: Visualización multipanel de biotipos, sustratos y reproducción.
+* `05_structural_characterization.R`: Visualización multipanel de biotipos, sustratos, reproducción y fotobiontes.
 * `06_glm_analysis.R`: Validación estadística de diferencias mediante GLM multinomiales.
 * `09_variance_partitioning.R`: Partición de varianza para determinar el peso de la geografía, biología y filogenia.
 
@@ -99,13 +99,13 @@ Este repositorio está protegido bajo la licencia **GNU GPL v3**. El código es 
 Si utiliza total o parcialmente estos scripts, funciones o metodologías para el análisis de datos en publicaciones científicas, tesis o proyectos académicos, **es obligatorio citar este trabajo** de la siguiente manera:
 
 ### Formato APA
-> Mahiques-Andrés, I. (2026). *Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte*. Repositorio de GitHub. https://github.com/Irene-Mahiques/Data-Analysis-Lichen-Symbiosis
+> Mahiques-Andrés, I. (2026). *Lichen-Net: Arquitectura funcional de las redes de interacción mico-fotobionte*. Repositorio de GitHub. https://github.com/Irene-Mahiques/Data-Analysis-Lichen-Symbiosis
 
 ### Formato BibTeX
 ```bibtex
 @software{mahiques_lichen_2026,
   author = {Mahiques Andrés, Irene},
-  title = {Lichen-Net: Diversidad taxonómica y redes de interacción mico-fotobionte},
+  title = {Lichen-Net: Arquitectura funcional de las redes de interacción mico-fotobionte},
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub repository},
